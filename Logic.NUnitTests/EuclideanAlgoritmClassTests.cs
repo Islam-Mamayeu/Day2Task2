@@ -22,14 +22,24 @@ namespace Logic.NUnitTests
         }
 
         [TestCase(1000, 575,746, Result = 1)]
+        [TestCase(0, 575, 746, ExpectedException =typeof( ArgumentException))]
+        [TestCase(423, 575, -234, Result = 1)]
 
         public int EuclideanAlgoritmTest(int a, int b,int c)
         {
-
-            int actResult = EuclideanAlgoritmClass.Algoritm(EuclideanAlgoritmClass.Algoritm(a, b),c);
+            Stopwatch timer = new Stopwatch();
+            int actResult = EuclideanAlgoritmClass.Algoritm(timer,a,b,c);
             return actResult;
         }
 
+        [TestCase(1000, 575, 746,345,123, Result = 1)]
+
+        public int EuclideanAlgoritmTest(int a, int b, int c,int d,int e)
+        {
+            Stopwatch timer = new Stopwatch();
+            int actResult = EuclideanAlgoritmClass.Algoritm(timer,a,b,c,d,e);
+            return actResult;
+        }
 
     }
 }

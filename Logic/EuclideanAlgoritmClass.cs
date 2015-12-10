@@ -9,12 +9,17 @@ namespace Logic
 {
     public class EuclideanAlgoritmClass
     {
-        public static int  Algoritm(Stopwatch timer, int a, int b)
+        public static int Algoritm(Stopwatch timer, int a, int b)
         {
+            if (a == 0||b==0)
+            {
+                throw new ArgumentException();
+            }
             timer.Start();
             int t;
             a = Math.Abs(a);
             b = Math.Abs(b);
+            
             while (b != 0)
             {
                 t = b;
